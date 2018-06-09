@@ -11,17 +11,16 @@ public class Admin extends Access {
 	
 	private String CliStr;	// 고객 이름
 	private Scanner keyboard = new Scanner(System.in);
-	private String Filename;
 	
 	private BankAcc ba = new BankAcc();
 
 	public Admin(String AccTxt, int logsit) {
 		super(AccTxt, logsit);
 		CliStr = null;
-		Filename = null;
+		super.FILENAME = null;
 	}
 	
-	// 고객 이름을 출력한다.
+	// Client DB에 있는 모든 고객 이름을 출력한다.
 	public void ClientPrint() {
 		
 		Path fp = Paths.get("/Users/kimhyeongseon/Desktop/Git/BankSystem/IdentiDB.txt");
@@ -51,7 +50,7 @@ public class Admin extends Access {
 		
 	}
 	
-	// 고객 이름에 해당하는 고객 DB의 위치를 반
+	// 고객 이름에 해당하는 고객 DB의 위치를 반환 
 	public String NametoAccTxt(String CliStr) {
 		
 		Path fp = Paths.get("/Users/kimhyeongseon/Desktop/Git/BankSystem/IdentiDB.txt");
@@ -79,8 +78,8 @@ public class Admin extends Access {
 					System.out.println("----------------------------");
 					System.out.println("Access ID" + strip[1] + ".");
 					System.out.println("----------------------------");
-					Filename = 	strip[3];
-					return Filename;
+					super.FILENAME = strip[3];
+					return super.FILENAME;
 				}
 			}
 					
@@ -89,7 +88,7 @@ public class Admin extends Access {
 			e.printStackTrace();
 		}		
 		
-		return Filename;
+		return super.FILENAME;
 	}
 	
 
@@ -100,14 +99,14 @@ public class Admin extends Access {
 		
 		System.out.println("Choose the clients: ");
 		CliStr = keyboard.nextLine();
-	 	Filename = NametoAccTxt(CliStr);
+	 	super.FILENAME = NametoAccTxt(CliStr);
 		
 		
 		System.out.print("DEPOSIT: ");
 		money = keyboard.nextInt();
 		keyboard.nextLine();
 		
-		ba.deposit(Filename,money);
+		ba.deposit(super.FILENAME,money);
 		
 	}
 
@@ -117,13 +116,13 @@ public class Admin extends Access {
 		
 		System.out.println("Choose the clients: ");
 		CliStr = keyboard.nextLine();
-		Filename = NametoAccTxt(CliStr);
+		super.FILENAME = NametoAccTxt(CliStr);
 		
 		System.out.print("WITHDRAW: ");
 		money = keyboard.nextInt();
 		keyboard.nextLine();
 		
-		ba.withdraw(Filename, money);
+		ba.withdraw(super.FILENAME, money);
 		
 	}
 
@@ -133,11 +132,11 @@ public class Admin extends Access {
 		
 		System.out.println("Choose the clients: ");
 		CliStr = keyboard.nextLine();
-		Filename = NametoAccTxt(CliStr);
+		super.FILENAME = NametoAccTxt(CliStr);
 		
 		System.out.print("ACCOUNT: ");
 		
-		ba.showAll(Filename);
+		ba.showAll(super.FILENAME);
 	}
 
 	public void Left() {
@@ -146,10 +145,10 @@ public class Admin extends Access {
 		
 		System.out.println("Choose the clients: ");
 		CliStr = keyboard.nextLine();
-		Filename = NametoAccTxt(CliStr);
+		super.FILENAME = NametoAccTxt(CliStr);
 		
 		System.out.print("LEFT: ");
-		ba.showLeft(Filename);
+		ba.showLeft(super.FILENAME);
 	}
 	
 }
