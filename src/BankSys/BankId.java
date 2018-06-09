@@ -42,7 +42,7 @@ public class BankId {
 				// IdentiDB는 ", " 으로 항목이 구분되어 있다.
 				
 				if (ID.equals(strip[1])) {
-				// 입력받은 ID와 DB PW가 같을때 true 반환, 아닐때 false 반환 
+				// 입력받은 ID와 DB ID가 같을때 true 반환, 아닐때 false 반환 
 					if (PW.equals(strip[2]))
 					{	// 입력받은 PW와 DB PW가 같을때 true 반환, 아닐때 false 반환 
 						
@@ -62,12 +62,10 @@ public class BankId {
 							Access Ad = new Admin("-1", 1);
 							return Ad;
 						}
+						
 	
 					}
-					else {
-						System.out.println("Not valid, please login again");
-						count++;
-					}
+					
 				}
 					
 			}

@@ -5,3 +5,56 @@ Curry, 0003, 0, 0, 0, 0
 Green, 0004, 0, 0, 0, 0
 Hayes, 0005, 0, 0, 0, 0
 Jones, 0006, 0, 0, 0, 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Client Name, Account number, Deposit, Withdraw, Left Money, Date
+Adams, 0001, 0, 0, 0, 0
+Brooks, 0002, 0, 0, 0, 0
+Curry, 0003, 0, 0, 0, 0
+Green, 0004, 0, 0, 0, 0
+Hayes, 0005, 0, 0, 0, 0
+Jones, 0006, 0, 0, 0, 0

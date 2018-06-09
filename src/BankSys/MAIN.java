@@ -27,12 +27,17 @@ public class MAIN {
 			System.out.println("------------------------------------");
 		
 			Temp = Identi.check(ID, PW);
+			if (Temp == null)
+			{
+				System.out.println("Not valid, please login again");
+			}
+			
 			}while ( Temp == null);
 			
 			while(true) {
 				
 				System.out.println("-----------------------------------------------------------------");
-				System.out.println("1. Deposit\t2. Withdraw\t3. Show\t4. Left Money\t5. Logout");
+				System.out.println("1. Deposit\t2. Withdraw\t3. Show\t  4.Left Money\t5. Logout");
 				System.out.println("-----------------------------------------------------------------");
 				
 				option = keyboard.nextInt();
